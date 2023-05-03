@@ -1,12 +1,16 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.19;
 
+// Integrates Worldcoin with Aragon OSX - enabling users to join the DAO
+// One user per One worldID
+
 //Import Worldcoin contract and necessary libraries
 
 import "@aragon/os/contracts/common/SafeMath.sol";
 import "@aragon/os/contracts/token/ERC20/IERC20.sol";
 import "@aragon/os/contracts/acl/IACLSyntaxInterpreter.sol";
 import "./Worldcoin.sol";
+
 
 contract WorldcoinDAOPlugin {
     
@@ -25,7 +29,7 @@ contract WorldcoinDAOPlugin {
 
     constructor(
         address _dao,
-        address _worldcoinAddress,
+        address _worldcoinAddress, 
         bytes32 _tokenMintRole
     ) public {
         daoAddress = _dao;
